@@ -1,0 +1,88 @@
+{
+  "variant": "int4_gptq_g128",
+  "method": "GPTQ (from-scratch implementation of Frantar et al.): INT4 group-128, Hessian from 2048 calibration tokens of a disjoint Alice slice, per-column error compensation.",
+  "model": "Qwen2.5-0.5B-Instruct",
+  "base_dtype": "fp32",
+  "stored_bytes": 734920192,
+  "stored_mb": 734.92,
+  "perplexity": {
+    "ppl": 13.707,
+    "tokens_scored": 3071,
+    "time_s": 125.5,
+    "s_per_token": 0.0408
+  },
+  "decode": {
+    "prompts": [
+      {
+        "prompt": "The history of the Roman Empire began when",
+        "new_tokens": 64,
+        "time_s": 217.61,
+        "tok_per_s": 0.29
+      },
+      {
+        "prompt": "To make a good omelette, you first need to",
+        "new_tokens": 64,
+        "time_s": 216.46,
+        "tok_per_s": 0.3
+      },
+      {
+        "prompt": "The mitochondria is known as the powerhouse of the cell because",
+        "new_tokens": 64,
+        "time_s": 189.97,
+        "tok_per_s": 0.34
+      },
+      {
+        "prompt": "In a shocking turn of events, scientists announced yesterday that",
+        "new_tokens": 64,
+        "time_s": 193.99,
+        "tok_per_s": 0.33
+      }
+    ],
+    "mean_tok_per_s": 0.32,
+    "tokens_per_prompt": 64
+  },
+  "spotcheck": {
+    "score": 4,
+    "total": 6,
+    "runs": [
+      {
+        "prompt": "The capital of France is",
+        "continuation": "Paris. It's a city with a rich history and culture, known for its",
+        "ok": true
+      },
+      {
+        "prompt": "The chemical symbol for water is",
+        "continuation": "H2O. This is a common and essential part of the human body,",
+        "ok": true
+      },
+      {
+        "prompt": "The first President of the United States was",
+        "continuation": "born in which year?\nWhat is the answer? 1847",
+        "ok": false
+      },
+      {
+        "prompt": "The largest planet in our solar system is",
+        "continuation": "____\nA. Mercury\nB. Venus\nC. Jupiter\nD.",
+        "ok": true
+      },
+      {
+        "prompt": "Two plus two equals",
+        "continuation": "three. What is the sum of 10 and 2? To find",
+        "ok": false
+      },
+      {
+        "prompt": "The author of Romeo and Juliet is",
+        "continuation": ":\nA) Shakespeare\nB) William Shakespeare\nC) Not enough information",
+        "ok": true
+      }
+    ]
+  },
+  "hardware": {
+    "platform": "x86_64",
+    "cpus": 2,
+    "torch_threads": 2,
+    "torch": "2.13.0+cpu",
+    "python": "3.12.3"
+  },
+  "build_s": 7.7
+}

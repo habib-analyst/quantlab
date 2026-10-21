@@ -1,0 +1,88 @@
+{
+  "variant": "int4_awq_g128",
+  "method": "AWQ core (from-scratch implementation of Lin et al.): activation-aware per-input-channel scaling, alpha grid search minimizing layer output error on calibration inputs, INT4 group-128.",
+  "model": "Qwen2.5-0.5B-Instruct",
+  "base_dtype": "fp32",
+  "stored_bytes": 735903232,
+  "stored_mb": 735.9,
+  "perplexity": {
+    "ppl": 14.184,
+    "tokens_scored": 3071,
+    "time_s": 124.5,
+    "s_per_token": 0.0405
+  },
+  "decode": {
+    "prompts": [
+      {
+        "prompt": "The history of the Roman Empire began when",
+        "new_tokens": 64,
+        "time_s": 270.88,
+        "tok_per_s": 0.24
+      },
+      {
+        "prompt": "To make a good omelette, you first need to",
+        "new_tokens": 64,
+        "time_s": 385.01,
+        "tok_per_s": 0.17
+      },
+      {
+        "prompt": "The mitochondria is known as the powerhouse of the cell because",
+        "new_tokens": 64,
+        "time_s": 263.11,
+        "tok_per_s": 0.24
+      },
+      {
+        "prompt": "In a shocking turn of events, scientists announced yesterday that",
+        "new_tokens": 64,
+        "time_s": 229.47,
+        "tok_per_s": 0.28
+      }
+    ],
+    "mean_tok_per_s": 0.23,
+    "tokens_per_prompt": 64
+  },
+  "spotcheck": {
+    "score": 4,
+    "total": 6,
+    "runs": [
+      {
+        "prompt": "The capital of France is",
+        "continuation": "Paris. The main language spoken in the country is French.\nIs there a capital",
+        "ok": true
+      },
+      {
+        "prompt": "The chemical symbol for water is",
+        "continuation": "____\nH2O\nH2O\nH2O\n\u7b54\u6848:",
+        "ok": true
+      },
+      {
+        "prompt": "The first President of the United States was",
+        "continuation": "elected by a majority of 27 states. The second and third presidents were",
+        "ok": false
+      },
+      {
+        "prompt": "The largest planet in our solar system is",
+        "continuation": "____\nA. Mercury\nB. Venus\nC. Mars\nD.",
+        "ok": false
+      },
+      {
+        "prompt": "Two plus two equals",
+        "continuation": "four. If the sum of a number and its own square is equal to",
+        "ok": true
+      },
+      {
+        "prompt": "The author of Romeo and Juliet is",
+        "continuation": "____\nA. Shakespeare\nB. William Shakespeare\nC. John Bunyan",
+        "ok": true
+      }
+    ]
+  },
+  "hardware": {
+    "platform": "x86_64",
+    "cpus": 2,
+    "torch_threads": 2,
+    "torch": "2.13.0+cpu",
+    "python": "3.12.3"
+  },
+  "build_s": 6.5
+}

@@ -1,0 +1,88 @@
+{
+  "variant": "fp8_w8a8",
+  "method": "FP8 W8A8, real compute path: weights per-output-channel e4m3, activations dynamically per-token e4m3, matmul via torch._scaled_mm on CPU.",
+  "model": "Qwen2.5-0.5B-Instruct",
+  "base_dtype": "fp32",
+  "stored_bytes": 903867904,
+  "stored_mb": 903.87,
+  "perplexity": {
+    "ppl": 11.941,
+    "tokens_scored": 3071,
+    "time_s": 159.5,
+    "s_per_token": 0.0519
+  },
+  "decode": {
+    "prompts": [
+      {
+        "prompt": "The history of the Roman Empire began when",
+        "new_tokens": 64,
+        "time_s": 274.17,
+        "tok_per_s": 0.23
+      },
+      {
+        "prompt": "To make a good omelette, you first need to",
+        "new_tokens": 64,
+        "time_s": 265.45,
+        "tok_per_s": 0.24
+      },
+      {
+        "prompt": "The mitochondria is known as the powerhouse of the cell because",
+        "new_tokens": 64,
+        "time_s": 266.5,
+        "tok_per_s": 0.24
+      },
+      {
+        "prompt": "In a shocking turn of events, scientists announced yesterday that",
+        "new_tokens": 64,
+        "time_s": 257.85,
+        "tok_per_s": 0.25
+      }
+    ],
+    "mean_tok_per_s": 0.24,
+    "tokens_per_prompt": 64
+  },
+  "spotcheck": {
+    "score": 6,
+    "total": 6,
+    "runs": [
+      {
+        "prompt": "The capital of France is",
+        "continuation": "Paris. It has a population of 2,180,43",
+        "ok": true
+      },
+      {
+        "prompt": "The chemical symbol for water is",
+        "continuation": "____.\nH2O\nCO2\nN2\nC60",
+        "ok": true
+      },
+      {
+        "prompt": "The first President of the United States was",
+        "continuation": "a man named George Washington. He served from 1789 to",
+        "ok": true
+      },
+      {
+        "prompt": "The largest planet in our solar system is",
+        "continuation": "____\nA. Jupiter\nB. Saturn\nC. Uranus\nD",
+        "ok": true
+      },
+      {
+        "prompt": "Two plus two equals",
+        "continuation": "Answer Choices: (A) 3 (B) 4 (C",
+        "ok": true
+      },
+      {
+        "prompt": "The author of Romeo and Juliet is",
+        "continuation": "______.\nA. Shakespeare\nB. William Shakespeare\nC. John Shakespeare",
+        "ok": true
+      }
+    ]
+  },
+  "hardware": {
+    "platform": "x86_64",
+    "cpus": 2,
+    "torch_threads": 2,
+    "torch": "2.13.0+cpu",
+    "python": "3.12.3"
+  },
+  "build_s": 12.4
+}

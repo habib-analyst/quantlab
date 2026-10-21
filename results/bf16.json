@@ -1,0 +1,88 @@
+{
+  "variant": "bf16",
+  "method": "BF16 baseline: every weight in bf16, no quantization.",
+  "model": "Qwen2.5-0.5B-Instruct",
+  "base_dtype": "fp32",
+  "stored_bytes": 988065536,
+  "stored_mb": 988.07,
+  "perplexity": {
+    "ppl": 11.697,
+    "tokens_scored": 3071,
+    "time_s": 49.0,
+    "s_per_token": 0.0159
+  },
+  "decode": {
+    "prompts": [
+      {
+        "prompt": "The history of the Roman Empire began when",
+        "new_tokens": 64,
+        "time_s": 12.97,
+        "tok_per_s": 4.93
+      },
+      {
+        "prompt": "To make a good omelette, you first need to",
+        "new_tokens": 64,
+        "time_s": 15.97,
+        "tok_per_s": 4.01
+      },
+      {
+        "prompt": "The mitochondria is known as the powerhouse of the cell because",
+        "new_tokens": 64,
+        "time_s": 13.92,
+        "tok_per_s": 4.6
+      },
+      {
+        "prompt": "In a shocking turn of events, scientists announced yesterday that",
+        "new_tokens": 64,
+        "time_s": 14.43,
+        "tok_per_s": 4.44
+      }
+    ],
+    "mean_tok_per_s": 4.5,
+    "tokens_per_prompt": 64
+  },
+  "spotcheck": {
+    "score": 4,
+    "total": 6,
+    "runs": [
+      {
+        "prompt": "The capital of France is",
+        "continuation": "Paris. It was founded in 789 AD by Charlemagne,",
+        "ok": true
+      },
+      {
+        "prompt": "The chemical symbol for water is",
+        "continuation": "____.\nH2O\nCO2\nN2\nCl2\nAnswer",
+        "ok": true
+      },
+      {
+        "prompt": "The first President of the United States was",
+        "continuation": "born in 1754. The last President of the United States was",
+        "ok": false
+      },
+      {
+        "prompt": "The largest planet in our solar system is",
+        "continuation": "____\nA. Venus\nB. Mars\nC. Jupiter\nD.",
+        "ok": true
+      },
+      {
+        "prompt": "Two plus two equals",
+        "continuation": "Answer Choices: (A) 3 (B) 4 (C",
+        "ok": true
+      },
+      {
+        "prompt": "The author of Romeo and Juliet is",
+        "continuation": "a famous playwright from the Renaissance period. The play was written in 15",
+        "ok": false
+      }
+    ]
+  },
+  "hardware": {
+    "platform": "x86_64",
+    "cpus": 2,
+    "torch_threads": 2,
+    "torch": "2.13.0+cpu",
+    "python": "3.12.3"
+  },
+  "build_s": 3.6
+}
