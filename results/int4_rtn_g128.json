@@ -1,0 +1,88 @@
+{
+  "variant": "int4_rtn_g128",
+  "method": "Weight-only INT4: group-128 (input dim) symmetric round-to-nearest (from scratch), packed 2 codes/byte.",
+  "model": "Qwen2.5-0.5B-Instruct",
+  "base_dtype": "fp32",
+  "stored_bytes": 734920192,
+  "stored_mb": 734.92,
+  "perplexity": {
+    "ppl": 16.824,
+    "tokens_scored": 3071,
+    "time_s": 109.4,
+    "s_per_token": 0.0356
+  },
+  "decode": {
+    "prompts": [
+      {
+        "prompt": "The history of the Roman Empire began when",
+        "new_tokens": 64,
+        "time_s": 179.68,
+        "tok_per_s": 0.36
+      },
+      {
+        "prompt": "To make a good omelette, you first need to",
+        "new_tokens": 64,
+        "time_s": 201.93,
+        "tok_per_s": 0.32
+      },
+      {
+        "prompt": "The mitochondria is known as the powerhouse of the cell because",
+        "new_tokens": 64,
+        "time_s": 204.33,
+        "tok_per_s": 0.31
+      },
+      {
+        "prompt": "In a shocking turn of events, scientists announced yesterday that",
+        "new_tokens": 64,
+        "time_s": 221.67,
+        "tok_per_s": 0.29
+      }
+    ],
+    "mean_tok_per_s": 0.32,
+    "tokens_per_prompt": 64
+  },
+  "spotcheck": {
+    "score": 5,
+    "total": 6,
+    "runs": [
+      {
+        "prompt": "The capital of France is",
+        "continuation": "Paris. The capital of Italy is Rome.\nA: Correct\nB: Incorrect",
+        "ok": true
+      },
+      {
+        "prompt": "The chemical symbol for water is",
+        "continuation": "H2O. True or False?\nAnswer and Explanation: To determine if the",
+        "ok": true
+      },
+      {
+        "prompt": "The first President of the United States was",
+        "continuation": "born on February 4, 1789. The second one was",
+        "ok": false
+      },
+      {
+        "prompt": "The largest planet in our solar system is",
+        "continuation": "not Earth. It's called Jupiter, and it has a diameter of about",
+        "ok": true
+      },
+      {
+        "prompt": "Two plus two equals",
+        "continuation": "four. What is the missing number?\nTo determine what number should be added to",
+        "ok": true
+      },
+      {
+        "prompt": "The author of Romeo and Juliet is",
+        "continuation": ":\nA. Shakespeare\nB. John Donne\nC. Jane Austen",
+        "ok": true
+      }
+    ]
+  },
+  "hardware": {
+    "platform": "x86_64",
+    "cpus": 2,
+    "torch_threads": 2,
+    "torch": "2.13.0+cpu",
+    "python": "3.12.3"
+  },
+  "build_s": 13.5
+}

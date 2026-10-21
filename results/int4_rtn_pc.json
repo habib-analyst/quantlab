@@ -1,0 +1,88 @@
+{
+  "variant": "int4_rtn_pc",
+  "method": "Weight-only INT4: per-output-channel symmetric round-to-nearest (from scratch), packed 2 codes/byte.",
+  "model": "Qwen2.5-0.5B-Instruct",
+  "base_dtype": "fp32",
+  "stored_bytes": 724954624,
+  "stored_mb": 724.95,
+  "perplexity": {
+    "ppl": 33.134,
+    "tokens_scored": 3071,
+    "time_s": 116.1,
+    "s_per_token": 0.0378
+  },
+  "decode": {
+    "prompts": [
+      {
+        "prompt": "The history of the Roman Empire began when",
+        "new_tokens": 64,
+        "time_s": 197.24,
+        "tok_per_s": 0.32
+      },
+      {
+        "prompt": "To make a good omelette, you first need to",
+        "new_tokens": 64,
+        "time_s": 196.28,
+        "tok_per_s": 0.33
+      },
+      {
+        "prompt": "The mitochondria is known as the powerhouse of the cell because",
+        "new_tokens": 64,
+        "time_s": 207.29,
+        "tok_per_s": 0.31
+      },
+      {
+        "prompt": "In a shocking turn of events, scientists announced yesterday that",
+        "new_tokens": 64,
+        "time_s": 204.48,
+        "tok_per_s": 0.31
+      }
+    ],
+    "mean_tok_per_s": 0.32,
+    "tokens_per_prompt": 64
+  },
+  "spotcheck": {
+    "score": 0,
+    "total": 6,
+    "runs": [
+      {
+        "prompt": "The capital of France is",
+        "continuation": "(\u3000\u3000) A\n, the correct answer is 100%",
+        "ok": false
+      },
+      {
+        "prompt": "The chemical symbol for water is",
+        "continuation": "____.\nA. H\nB. H\nC. H\nD.",
+        "ok": false
+      },
+      {
+        "prompt": "The first President of the United States was",
+        "continuation": "born into an 19th century. How many years after he was born",
+        "ok": false
+      },
+      {
+        "prompt": "The largest planet in our solar system is",
+        "continuation": "not a book of the Bible. It is not a member of any mathematical formula",
+        "ok": false
+      },
+      {
+        "prompt": "Two plus two equals",
+        "continuation": "one, but what is the world of 2019 missing to you",
+        "ok": false
+      },
+      {
+        "prompt": "The author of Romeo and Juliet is",
+        "continuation": ": 0. \u6b63\u786e\u7b54\u6848: A. \u83b4\u82b1 B",
+        "ok": false
+      }
+    ]
+  },
+  "hardware": {
+    "platform": "x86_64",
+    "cpus": 2,
+    "torch_threads": 2,
+    "torch": "2.13.0+cpu",
+    "python": "3.12.3"
+  },
+  "build_s": 14.1
+}
