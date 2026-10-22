@@ -1,0 +1,5 @@
+# Quantized weight artifacts are regenerated, never committed.
+artifacts/
+logs/
+__pycache__/
+*.pyc
